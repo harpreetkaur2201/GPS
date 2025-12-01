@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* your color */
+  color: #333; /* your color */
+}
+
+/* Header with your provided colors */
+header {
+  background-color: #bcbcc8; /* your color */
+  color: rgb(69, 61, 226);   /* your color */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* neutral shadow, not a new color */
+}
+
+/* Heading Styles */
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #333; /* stays within your color palette */
+}
+
+/* Map styling */
+#map {
+  height: 80vh;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* neutral shadow, allowed */
+}
+
+/* Paragraph spacing for professional look */
+p {
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+/* Layout container */
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+}
