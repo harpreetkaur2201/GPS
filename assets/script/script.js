@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
  
 mapboxgl.accessToken = "pk.eyJ1IjoiZ3VybGlua2F1ciIsImEiOiJjbHExYjM4cHUwNzE3MnBud25qNDlmc2VjIn0.Jeu9BD0h1vILAwXce8dQqw";
  
@@ -34,11 +34,9 @@ function getLocation(position) {
  
     document.getElementById("status").textContent = "Location found.";
  
-    // 🔥 HIDE the big dialog box
 
     document.getElementById("mapContent").style.display = "none";
  
-    // 🔥 HIDE the track button after clicked
 
     document.getElementById("trackBtn").style.display = "none";
 
