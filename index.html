@@ -4,42 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Navjot Kaur">
-    <meta name="description" content="Cookies">
-    <meta name="keywords" content="html, css, web, web development, javascript">
-    <title>GPS</title>
+    <meta name="description" content="GPS tracking">
+    <title>SwiftRoute GPS</title>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
-    <link rel="icon" href="./assets/media/favicon.png?v=2" type="image/x-icon">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet" href="./assets/script/style/style.css" media="all">
     <script src="./assets/script/script.js" defer></script>
   </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>SwiftRoute</h1>
-            <p>Smart Delivery Tracking — Know exactly where you are.</p>
-        </div>
-    </header>
+  <header>
+    <div class="container">
+      <h1>SwiftRoute</h1>
+      <p>Smart Delivery Tracking — Know exactly where you are.</p>
+    </div>
+  </header>
 
-    <main class="container">
-        <section>
-            <h2>Your Current Location</h2>
-            <p>
-                SwiftRoute helps customers track deliveries from restaurants, stores,
-                and service providers in real-time. The map below shows <strong>your exact location</strong>,
-                helping our drivers reach you faster and more accurately.
-            </p>
-        </section>
-
-        <div id="map"></div>
-        <p id="status"></p>
-    </main>
-
-    <!-- Mapbox JS -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.18.0/mapbox-gl.js"></script>
-    <!-- Your custom JS -->
-    <script src="./assets/script/script.js" defer></script>
+  <div id="map"></div>
+    
+    <div id="mapContent">
+      <h2>Your Current Location</h2>
+      <p>
+        SwiftRoute helps customers track deliveries from restaurants, stores,
+        and service providers in real-time. Click the button below to see 
+        your exact location on the map.
+      </p>
+      <button id="trackBtn">Track</button>
+      <p id="status"></p>
+    </div>
+ 
 </body>
 </html>

@@ -1,35 +1,69 @@
+"use strict";
+ 
 mapboxgl.accessToken = "pk.eyJ1IjoiZ3VybGlua2F1ciIsImEiOiJjbHExYjM4cHUwNzE3MnBud25qNDlmc2VjIn0.Jeu9BD0h1vILAwXce8dQqw";
+ 
+let map = new mapboxgl.Map({
 
-function initMap(lat, lng) {
+    container: "map",
+
+    style: "mapbox://styles/mapbox/streets-v11",
+
+    center: [0, 0],
+
+    zoom: 15
+
+});
+ 
+let marker = new mapboxgl.Marker({ color: "#ff7342" });
+ 
+let options = {
+
+    enableHighAccuracy: true
+
+};
+ 
+function getLocation(position) {
+
+    let lat = position.coords.latitude;
+
+    let lng = position.coords.longitude;
+ 
+    map.setCenter([lng, lat]);
+
+    marker.setLngLat([lng, lat]).addTo(map);
+ 
     document.getElementById("status").textContent = "Location found.";
-    const map = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/mapbox/streets-v12",
-        center: [lng, lat],
-        zoom: 14
-    });
-    new mapboxgl.Marker({ color: "#ff3333" })
-        .setLngLat([lng, lat])
-        .addTo(map);
-}
+ 
+    // 🔥 HIDE the big dialog box
 
-function showError(error) {
-    document.getElementById("status").textContent = "Unable to retrieve location: " + error.message;
-}
+    document.getElementById("mapContent").style.display = "none";
+ 
+    // 🔥 HIDE the track button after clicked
 
-function getDeviceLocation(successCallback, errorCallback) {
-    if (!navigator.geolocation) {
-        errorCallback({ message: "Geolocation not supported by this browser." });
-        return;
+    document.getElementById("trackBtn").style.display = "none";
+
+}
+ 
+function errorHandler() {
+
+    document.getElementById("status").textContent = "Unable to get your location.";
+
+}
+ 
+function displayPosition() {
+
+    if ("geolocation" in navigator) {
+
+        navigator.geolocation.getCurrentPosition(getLocation, errorHandler, options);
+
+    } else {
+
+        document.getElementById("status").textContent = "Geolocation not supported.";
+
     }
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            const lat = position.coords.latitude;
-            const lng = position.coords.longitude;
-            successCallback(lat, lng);
-        },
-        (error) => errorCallback(error)
-    );
-}
 
-getDeviceLocation(initMap, showError);
+}
+ 
+document.getElementById("trackBtn").addEventListener("click", displayPosition);
+
+ 
