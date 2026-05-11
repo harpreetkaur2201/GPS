@@ -8,11 +8,11 @@ It demonstrates real-time geolocation tracking using the browser and displays th
 [You-are-here](https://harpreetkaur2201.github.io/GPS/)
 
 ## ✨ Features
-📍 Real-time GPS location tracking using browser Geolocation API
-🗺️ Interactive Mapbox map integration
-📌 Marker showing your exact current location
-⚡ Live location updates on button click
-⚠️ Proper error handling for denied or unavailable location access
+-📍 Real-time GPS location tracking using browser Geolocation API
+-🗺️ Interactive Mapbox map integration
+-📌 Marker showing your exact current location
+-⚡ Live location updates on button click
+-⚠️ Proper error handling for denied or unavailable location access
 
 ## 📸 Application Preview
 🔒 Before Location Permission
